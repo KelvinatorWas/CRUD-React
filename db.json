@@ -1,0 +1,30 @@
+{
+  "IID": [
+    {
+      "id": 0,
+      "name": "Gatto",
+      "species": "Cat",
+      "sex": "Male",
+      "occupation": "Being Cute",
+      "origin": "Earth",
+      "pfp": "cat",
+      "birth_year": "2020",
+      "status": "Is eepy.",
+      "desc": "",
+      "createdAt": "2023-11-23T14:15:24.450Z"
+    },
+    {
+      "id": 1,
+      "name": "Jane Doe",
+      "species": "Human",
+      "sex": "Female",
+      "occupation": "Shoplifter",
+      "origin": "Earth",
+      "pfp": "jane_doe",
+      "birth_year": "2002",
+      "status": "is on probation!",
+      "desc": "",
+      "createdAt": "2023-11-23T16:53:08.285Z"
+    }
+  ]
+}
