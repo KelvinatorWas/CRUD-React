@@ -5,7 +5,7 @@ import CardManager from './components/card/cardManager'
 function App() {
 
   return (
-      <div className="main">
+      <div className = "main">
         <Header />
         <CardManager />
       </div>

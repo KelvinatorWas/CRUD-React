@@ -1,18 +1,32 @@
 import { readData, createData } from "../crud/crud";
 import { IID } from "./card";
+import '../style/card.css'; 
+import Card from "./card";
+
 
 const SERVER_LINK = "http://localhost:3000/IID";
 
+const fetchData = async (): IID[] => {
+  const data = await readData<IID>(SERVER_LINK)
+  return data;
+  //console.log(CardData)
+}
+const CardData:IID[] = await fetchData();
+
 const CardManager = () => {
-  let CardData:IID[];
-  const fetchData = async () => {
-    CardData = await readData<IID>(SERVER_LINK)
-    console.log(CardData)
-  }
-  fetchData();
 
   return (
-    <div>HEllo</div>
+    
+    <div className="id-wrapper">
+      {
+        CardData.map((idCard:IID) => (
+          <Card
+          key = {idCard.id} 
+          data = {idCard}
+          />
+        )
+      )}
+    </div>
   )
 }
 

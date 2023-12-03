@@ -15,8 +15,7 @@ export const readData = async<T>(serverLink:string): Promise<T[]> => {
     const result = await axios.get<T[]>(serverLink);
     return result.data;
   } catch (error) {
-    console.error(`Error fetchData: ${error}`);
-    return []
+    throw new Error(`Error fetchData: ${error}`);
   }
 };
 
