@@ -42,7 +42,7 @@ const Card = ({ data }: {data:IID}) => (
   <div className="iid-card-box">
     <div className="iid-card">
       <div className="iid-card__main-data-wrapper">
-        <CardPfp />
+        <CardPfp dataPfp={data.pfp} />
         <MainDataRect
           idData={data}
          />

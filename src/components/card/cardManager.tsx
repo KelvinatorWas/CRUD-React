@@ -1,4 +1,4 @@
-import { readData, createData } from "../crud/crud";
+import { readData, createData } from "../helperFunctions/crud";
 import { IID } from "./card";
 import '../style/card.css'; 
 import Card from "./card";
