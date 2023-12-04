@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
 
 body {
-  /*background-image: url('./assets/background.png');
+  background-image: url('./assets/bg.png');
   background-repeat: no-repeat;
   background-size: cover;
-  */
   font-family: 'Barlow';
   justify-content: center;
 }
@@ -22,6 +21,7 @@ body {
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
+  margin-bottom: 32px;
 }
 
 .center-wrapper {

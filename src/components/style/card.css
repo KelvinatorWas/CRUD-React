@@ -6,9 +6,12 @@
   column-gap: 16px;
   width: auto;
   height: auto;
-  background-color: darkslategrey;
+  background-color: rgba(47, 79, 79, 0.344);
   padding: 32px;
   border-radius: 16px;
+
+  border: 2px solid rgba(255, 0, 0, 0.411);
+  backdrop-filter: blur(8px);
 }
 
 @media only screen and (max-width: 1400px) {
@@ -29,8 +32,8 @@
   height: 32px;
   border-radius: 0px 0px 16px 16px;
   justify-content: center;
-  background-color: gray;
-
+  background-color: rgba(128, 128, 128, 0.477);
+  
   padding: 4px;
 }
 
@@ -39,9 +42,10 @@
   justify-self: center;
   width: 520px;
   height: 320px;
-  background-color: rgb(112, 112, 112);
+  background-color: rgba(112, 112, 112, 0.408);
   border-radius: 25px;
   flex-direction: column;
+  border: 2px solid rgba(255, 0, 0, 0.411);
 }
 
 .iid-card__main-data-wrapper {
@@ -64,6 +68,7 @@
   border-radius: 16px;
   background:url('src/assets/images/default.png');
   background-size: 100%;
+  border: 2px solid rgba(255, 0, 0, 0.411);
 
   margin: 29px 29px 14px 29px;
 }
@@ -76,6 +81,7 @@
 
   border-radius: 16px;
   background: #808080; 
+  border: 2px solid rgba(255, 0, 0, 0.411);
   flex-direction: column;
   padding: 16px;
   width: 52%;
@@ -88,7 +94,8 @@
 
 
   border-radius: 16px;
-  background: #808080; 
+  background: #808080;
+  border: 2px solid rgba(255, 0, 0, 0.411);
   flex-direction: column;
   padding: 16px;
 }
@@ -101,7 +108,7 @@
 }
 
 .text-box__type, .iid-input-text, .text-box__text {
-  color: #040404;
+  color: #ffffff;
   font-family: 'Inter';
   font-size: 12px;
   font-style: bold;
@@ -122,6 +129,7 @@
   color:rgb(0, 0, 0);
   border: none;
   font-weight: bold;
+  
 
   &:focus {
     border-radius: 8px;
@@ -137,7 +145,10 @@
   display: flex;
   flex-direction: column;
   padding: 16px;
-  background-color: gray;
+  background-color: rgba(47, 79, 79, 0.344);
+  border: 2px solid rgba(255, 0, 0, 0.411);
+  backdrop-filter: blur(8px);
+  border-top:none;
   border-radius: 0 0 16px 16px;
 }
 .text-box__input {
