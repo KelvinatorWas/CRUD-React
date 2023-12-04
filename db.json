@@ -25,6 +25,32 @@
       "status": "is on probation!",
       "desc": "",
       "createdAt": "2023-11-23T16:53:08.285Z"
+    },
+    {
+      "name": "John Doe",
+      "species": "Human",
+      "sex": "Male",
+      "occupation": "Builder",
+      "origin": "Earth",
+      "pfp": "john_doe.jpg",
+      "birth_year": "2099",
+      "status": "Alive",
+      "desc": "had a accident",
+      "createdAt": "2023-12-03T21:12:15.483Z",
+      "id": 2
+    },
+    {
+      "name": "Dog",
+      "species": "Dog",
+      "sex": "Male",
+      "occupation": "Being a good boy!",
+      "origin": "Earth",
+      "pfp": "dogo.jpg",
+      "birth_year": "2010",
+      "status": "Sleeping",
+      "desc": "",
+      "createdAt": "2023-12-04T00:32:42.639Z",
+      "id": 3
     }
   ]
 }

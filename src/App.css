@@ -23,3 +23,14 @@ body {
   align-items: center;
   font-weight: bold;
 }
+
+.center-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.all-cards {
+  display: flex;
+  justify-content: center;
+}
