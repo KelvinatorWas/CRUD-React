@@ -15,19 +15,6 @@
       "occuppation": "3000"
     },
     {
-      "id": 1,
-      "name": "Jane Doe",
-      "species": "Homo Sapien",
-      "sex": "Female",
-      "occupation": "Shoplifter",
-      "origin": "Earth",
-      "pfp": "jane_doe.jpg",
-      "birth_year": "2002",
-      "status": "is on probation!",
-      "desc": "",
-      "createdAt": "2023-11-23T16:53:08.285Z"
-    },
-    {
       "name": "John Doe",
       "species": "Homo Sapien",
       "sex": "Male",
