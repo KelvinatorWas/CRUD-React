@@ -5,19 +5,21 @@ type TypeCardForm = {
   createData: (data: IID) => void;
 };
 
+const defaultData = {
+  name: '',
+  species: '',
+  sex: '',
+  occupation: '',
+  origin: '',
+  pfp: '',
+  birth_year: '',
+  status: '',
+  desc: '',
+  createdAt: ''
+};
+
 const CardForm = ({ createData }: TypeCardForm) => {
-  const [formData, setFormData] = useState<IID>({
-    name: '',
-    species: '',
-    sex: '',
-    occupation: '',
-    origin: '',
-    pfp: '',
-    birth_year: '',
-    status: '',
-    desc: '',
-    createdAt: ''
-  });
+  const [formData, setFormData] = useState<IID>({...defaultData});
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -37,6 +39,7 @@ const CardForm = ({ createData }: TypeCardForm) => {
     };
 
     createData(updatedFormData);
+
   };
 
   // yeah idk
