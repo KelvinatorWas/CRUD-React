@@ -31,8 +31,6 @@ const CardForm = ({ createData }: TypeCardForm) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log(formData)
-
     const updatedFormData = {
       ...formData,
       createdAt: new Date().toISOString(),
@@ -41,6 +39,7 @@ const CardForm = ({ createData }: TypeCardForm) => {
     createData(updatedFormData);
   };
 
+  // yeah idk
   return (
     <div className="iid-input-box">
       <form id="iidForm" onSubmit={handleSubmit}>

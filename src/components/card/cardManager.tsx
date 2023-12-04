@@ -7,9 +7,7 @@ import { useEffect, useState } from "react";
 
 const SERVER_LINK = "http://localhost:3000/IID";
 
-
 const CardManager = () => {
-
   const [cardData, setCardData] = useState<IID[]>([]);
 
   const fetchData = async (): Promise<void> => {
@@ -24,17 +22,17 @@ const CardManager = () => {
   const createNewCardData = async (data:IID) => {
     await createData(SERVER_LINK, data);
     fetchData();
-  }
+  };
 
   const deleteCard = async (id:number) => {
     await deleteData(SERVER_LINK, id)
     fetchData();
-  }
+  };
 
   const updateCard = async (data:IID) => {
     await updateData<IID>(SERVER_LINK, data.id, data);
     fetchData();
-  }
+  };
 
 
   const renderCards = () => {
@@ -47,7 +45,7 @@ const CardManager = () => {
       />
     )
    )
-  }
+  };
 
   return (
     <div className='center-wrapper'>
@@ -61,7 +59,7 @@ const CardManager = () => {
         createData={createNewCardData}
       />
     </div>
-  )
+  );
 }
 
 export default CardManager
