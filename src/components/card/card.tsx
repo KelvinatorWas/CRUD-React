@@ -1,7 +1,7 @@
 import { formatDistanceToNow } from "date-fns";
 import CardPfp from "./cardPfp";
 import { DeleteForever, ModeEdit, Save } from "@mui/icons-material";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export type IID = {
   id?: number;
@@ -17,10 +17,14 @@ export type IID = {
   createdAt:string;
 };
 
-const TextBox = (type:string, text = '', edit = false) => {
+const TextBox = (type:string, text = '', edit = false, saveData:(key:string, value:string) => void, key:string) => {
+  const updateText = (e) => {
+    saveData(key, e.target.value);
+  }
+
   const typeOfBox = () => {
     if (!edit) return <p className="text-box__text">{text}</p>;
-    else return <input className="edit-input-box" defaultValue={text}></input>;
+    else return <input className="edit-input-box" defaultValue={text} onChange={updateText}></input>;
   }
 
   return(
@@ -35,22 +39,23 @@ const TextBox = (type:string, text = '', edit = false) => {
 
 type DataRectType = {
   idData:IID;
-  edit:boolean
+  edit:boolean;
+  saveData: (key:string, value:string) => void;
 }
-const MainDataRect = ({ idData, edit}: DataRectType) => (
+const MainDataRect = ({ idData, edit, saveData }: DataRectType) => (
   <div className="main-data-wrapper__data-rect">
-    {TextBox('Name:', idData.name, edit)}
-    {TextBox('Species:', idData.species, edit)}
-    {TextBox('Sex:', idData.sex, edit)}
-    {TextBox('Origin:', idData.origin,  edit)}
+    {TextBox('Name:', idData.name, edit, saveData, 'name')}
+    {TextBox('Species:', idData.species, edit, saveData, 'species')}
+    {TextBox('Sex:', idData.sex, edit, saveData, 'sex')}
+    {TextBox('Origin:', idData.origin,  edit, saveData, 'origin')}
   </div>
 )
 
-const BottomDataRect = ({ idData, edit }: DataRectType) => (
+const BottomDataRect = ({ idData, edit, saveData}: DataRectType) => (
   <div className="iid-card__data-rect">
-    {TextBox('Occupation:', idData.occupation, edit)}
-    {TextBox('Birth Year:', `${idData.birth_year} ${idData.origin}'s Years`, edit)}
-    {TextBox('Status:', idData.status, edit)}
+    {TextBox('Occupation:', idData.occupation, edit, saveData, 'occupation')}
+    {TextBox('Birth Year:', `${idData.birth_year} ${idData.origin}'s Years`, edit, saveData, 'birth_year')}
+    {TextBox('Status:', idData.status, edit, saveData, 'status')}
   </div>
 )
 
@@ -64,11 +69,12 @@ const createdAt = (time:string) => {
 type CardType = {
   data:IID;
   deleteCard: (id:number) => void
-  
+  updateCard: (data:IID) => void
 }
 
-const Card = ({ data, deleteCard }: CardType) => {
+const Card = ({ data, deleteCard, updateCard }: CardType) => {
   const [editMode, setEditMode] = useState(false);
+  const [mainData, setMainData] = useState(data);
 
   const deleteSelfCard = () => {
     if (data.id !== undefined) deleteCard(data.id);
@@ -76,6 +82,17 @@ const Card = ({ data, deleteCard }: CardType) => {
 
   const editSelfCard = () => {
     setEditMode(!editMode);
+
+    if (editMode) {
+      updateCard(mainData);
+    }
+
+  }
+
+  const saveData = (key:string, value:string) => {
+    if (editMode) setMainData((prevData) =>  {
+      return {...prevData, [key]:value}
+    });
   }
 
   const renderEditOrSave = () => {
@@ -90,18 +107,20 @@ const Card = ({ data, deleteCard }: CardType) => {
       <div className="iid-card__main-data-wrapper">
         <CardPfp dataPfp={data.pfp} />
         <MainDataRect
-          idData={data}
+          idData={mainData}
           edit={editMode}
+          saveData={saveData}
          />
       </div>
 
       <BottomDataRect
-        idData={data}
+        idData={mainData}
         edit={editMode}
+        saveData={saveData}
       />
 
       <div className="card__ud">
-        <div className="iid-card-created-at">{createdAt(data.createdAt)}</div>
+        <div className="iid-card-created-at">{createdAt(mainData.createdAt)}</div>
         {renderEditOrSave()}
         <DeleteForever className="delete-card" aria-hidden='true' onClick={deleteSelfCard}></DeleteForever>
       </div>

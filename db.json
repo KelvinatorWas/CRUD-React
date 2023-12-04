@@ -2,21 +2,22 @@
   "IID": [
     {
       "id": 0,
-      "name": "Gatto",
+      "name": "Tico",
       "species": "Cat",
       "sex": "Male",
       "occupation": "Being Cute",
-      "origin": "Earth",
+      "origin": "Mars",
       "pfp": "cat.png",
-      "birth_year": "2020",
+      "birth_year": "2000",
       "status": "Is eepy.",
       "desc": "",
-      "createdAt": "2023-11-23T14:15:24.450Z"
+      "createdAt": "2023-11-23T14:15:24.450Z",
+      "occuppation": "3000"
     },
     {
       "id": 1,
       "name": "Jane Doe",
-      "species": "Human",
+      "species": "Homo Sapien",
       "sex": "Female",
       "occupation": "Shoplifter",
       "origin": "Earth",
@@ -28,7 +29,7 @@
     },
     {
       "name": "John Doe",
-      "species": "Human",
+      "species": "Homo Sapien",
       "sex": "Male",
       "occupation": "Builder",
       "origin": "Earth",
@@ -41,7 +42,7 @@
     },
     {
       "name": "Dog",
-      "species": "Dog",
+      "species": "Canis familiaris",
       "sex": "Male",
       "occupation": "Being a good boy!",
       "origin": "Earth",
@@ -51,6 +52,20 @@
       "desc": "",
       "createdAt": "2023-12-04T00:32:42.639Z",
       "id": 3
+    },
+    {
+      "name": "Mustang",
+      "species": "Car",
+      "sex": "its a car",
+      "occupation": "idk its car",
+      "origin": "Earth",
+      "pfp": "https://i.pinimg.com/originals/94/39/0b/94390b50e16145523416e45d1924e296.jpg",
+      "birth_year": "Unknown",
+      "status": "Unknown",
+      "desc": "",
+      "createdAt": "2023-12-04T10:53:57.998Z",
+      "id": 7,
+      "occuppation": "idk"
     }
   ]
 }

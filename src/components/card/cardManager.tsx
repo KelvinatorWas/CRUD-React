@@ -1,4 +1,4 @@
-import { readData, createData, deleteData } from "../helperFunctions/crud";
+import { readData, createData, deleteData, updateData } from "../helperFunctions/crud";
 import { IID } from "./card";
 import '../style/card.css'; 
 import Card from "./card";
@@ -21,7 +21,7 @@ const CardManager = () => {
     fetchData();
   }, []);
 
-  const updateCardData = async (data:IID) => {
+  const createNewCardData = async (data:IID) => {
     await createData(SERVER_LINK, data);
     fetchData();
   }
@@ -31,12 +31,19 @@ const CardManager = () => {
     fetchData();
   }
 
+  const updateCard = async (data:IID) => {
+    await updateData<IID>(SERVER_LINK, data.id, data);
+    fetchData();
+  }
+
+
   const renderCards = () => {
     return cardData.map((idCard:IID) => (
       <Card
       key = {idCard.id} 
       data = {idCard}
       deleteCard = {deleteCard}
+      updateCard={updateCard}
       />
     )
    )
@@ -51,7 +58,7 @@ const CardManager = () => {
       </div>
       
       <CardForm
-        createData={updateCardData}
+        createData={createNewCardData}
       />
     </div>
   )
